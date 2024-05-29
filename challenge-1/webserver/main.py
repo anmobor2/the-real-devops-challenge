@@ -20,7 +20,7 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"Hello, World!")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Simple HTTP server with logging")# Create an ArgumentParser object
+    parser = argparse.ArgumentParser(description="Simple HTTP server with logging")
     parser.add_argument("--host", type=str, default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8000)
 

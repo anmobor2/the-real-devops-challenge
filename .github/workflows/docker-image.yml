@@ -12,6 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Adjust Docker Context Path
+        id: set-path
+        run: |
+          DOCKER_CONTEXT=${{ github.workspace }}/challenge-1/webserver
+          ADJUSTED_CONTEXT=${DOCKER_CONTEXT/#$GITHUB_WORKSPACE\/the-real-devops-challenge/$GITHUB_WORKSPACE}
+          echo "ADJUSTED_CONTEXT=$ADJUSTED_CONTEXT" >> $GITHUB_ENV # the-real-devops-challenge was repeated in the path it must be a bug.
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -27,9 +34,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ${{ env.DOCKER_CONTEXT }}
+          context: ${{ env.ADJUSTED_CONTEXT }}
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-http-server:latest
-
-env:
-  DOCKER_CONTEXT: challenge-1/webserver

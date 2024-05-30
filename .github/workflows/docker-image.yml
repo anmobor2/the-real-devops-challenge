@@ -35,5 +35,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ${{ env.ADJUSTED_CONTEXT }}
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-http-server:latest

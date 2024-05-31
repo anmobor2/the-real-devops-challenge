@@ -7,7 +7,7 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         timestamp = datetime.now().strftime("%d/%b/%Y %H:%M:%S")
         client_ip = self.client_address[0]
 
-        log_message = f"{client_ip} - [{timestamp}] {format % args}"
+        log_message = f"{client_ip} - - [{timestamp}] {format % args}"
         print(log_message)
         print(log_message)
 

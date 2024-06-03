@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "python-http-server.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "python-http-server.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    helm.sh/chart: {{ include "python-http-server.chart" . }}-{{ .Chart.Version }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "python-http-server.selectorLabels" . | nindent 4 }}
+

@@ -41,7 +41,6 @@ A Helm chart for Kubernetes
 | securityContext | object | `{}` |  |
 | service.port | int | `8000` |  |
 | service.type | string | `"ClusterIP"` |  |
-| serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.automount | bool | `true` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `"python-http-server-sac"` |  |

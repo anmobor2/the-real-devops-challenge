@@ -25,4 +25,9 @@ Connection: keep-alive
 
 Hello, World!%
 
+## Optional points has been implemented sucessfully
+Optional:
 
+Generate documentation for Helm chart (norwoodj/helm-docs)
+Test end-to-end Helm chart with Github Action: helm/chart-testing-action
+Validate values.yaml with values.schema.json

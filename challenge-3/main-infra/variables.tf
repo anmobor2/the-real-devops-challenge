@@ -63,22 +63,22 @@ variable "alb_load_balancer_type" {
   default     = "application"
 }
 
-variable name {
+variable "name" {
   description = "Name of the ALB target group"
   type        = string
 }
 
-variable backend_protocol {
+variable "backend_protocol" {
   description = "Protocol for the ALB target group"
   type        = string
 }
 
-variable backend_port {
+variable "backend_port" {
   description = "Port for the ALB target group"
   type        = number
 }
 
-variable target_type { 
+variable "target_type" {
   description = "Type of target for the ALB target group"
   type        = string
 }
@@ -89,16 +89,16 @@ variable "alb_http_tcp_listeners" {
     protocol = string
   }))
   description = "List of HTTP/TCP listeners for the ALB"
-  default     = [
-  {
-    port     = 80
-    protocol = "HTTP"
-  },
-  {
-    port     = 443
-    protocol = "HTTPS"
-  }
-]  
+  default = [
+    {
+      port     = 80
+      protocol = "HTTP"
+    },
+    {
+      port     = 443
+      protocol = "HTTPS"
+    }
+  ]
 }
 
 # albgroup variables
@@ -123,7 +123,7 @@ variable "alb_security_group_ingress_cidr_blocks" {
 
 variable "alb_security_group_ingress_rules" {
   description = "Ingress rules for the security group"
-  type        = list(object({
+  type = list(object({
     from_port   = number
     to_port     = number
     protocol    = string
@@ -150,7 +150,7 @@ variable "alb_security_group_ingress_rules" {
 
 variable "alb_security_group_egress_rules" {
   description = "Egress rules for the security group"
-  type        = list(object({
+  type = list(object({
     from_port   = number
     to_port     = number
     protocol    = string
@@ -161,7 +161,7 @@ variable "alb_security_group_egress_rules" {
     {
       from_port   = 0
       to_port     = 0
-      protocol    = "-1"  # -1 significa "todos los protocolos"
+      protocol    = "-1" # -1 significa "todos los protocolos"
       cidr_blocks = ["0.0.0.0/0"]
       description = "Allow all outbound traffic"
     }
@@ -336,26 +336,26 @@ variable "target_group_protocol" {
 variable "target_group_name" {
   description = "target group name"
   type        = string
-  default = "project-intely-tg"
+  default     = "project-intely-tg"
 }
 
 variable "create_attachment" {
   description = "Whether to create a target group attachment"
   type        = bool
   default     = false
-  
+
 }
 
 variable "health_check_path" {
   description = "The path for the health check"
   type        = string
-  default = "/"
+  default     = "/"
 }
 
 variable "health_check_protocol" {
   description = "The protocol for the health check"
   type        = string
-  default = "HTTP"
+  default     = "HTTP"
 }
 
 variable "health_check_interval" {
@@ -373,13 +373,13 @@ variable "health_check_timeout" {
 variable "health_check_healthy_threshold" {
   description = "The number of successful checks before considering the target healthy"
   type        = number
-  default = 2
+  default     = 2
 }
 
 variable "health_check_unhealthy_threshold" {
   description = "The number of failed checks before considering the target unhealthy"
   type        = number
-  default = 5
+  default     = 5
 }
 
 variable "health_check_matcher" {
@@ -428,9 +428,9 @@ variable "security_group_tags" {
   }
 }
 
-variable autoscaling_ingress_rules {
+variable "autoscaling_ingress_rules" {
   description = "Ingress rules for the autoscaling security group"
-  type        = list(object({
+  type = list(object({
     from_port   = number
     to_port     = number
     protocol    = string
@@ -444,9 +444,9 @@ variable autoscaling_ingress_rules {
   }]
 }
 # sobra
-variable autoscaling_egress_rules {
+variable "autoscaling_egress_rules" {
   description = "Egress rules for the autoscaling security group"
-  type        = list(object({
+  type = list(object({
     from_port   = number
     to_port     = number
     protocol    = string
@@ -460,13 +460,13 @@ variable autoscaling_egress_rules {
   }]
 }
 
-variable autoscaling_ingress_cidr_blocks {
+variable "autoscaling_ingress_cidr_blocks" {
   description = "Ingress CIDR blocks for the autoscaling security group"
   type        = list(string)
-  default =  ["0.0.0.0/0"]
+  default     = ["0.0.0.0/0"]
 }
 # sobra 
-variable instance_tag_name {
+variable "instance_tag_name" {
   description = "The name tag for the instances"
   type        = string
   default     = "project_intely"
@@ -474,7 +474,7 @@ variable instance_tag_name {
 
 variable "security_group_ingress_rules" {
   description = "Ingress rules for the security group"
-  type        = list(object({
+  type = list(object({
     from_port   = number
     to_port     = number
     protocol    = string
@@ -501,7 +501,7 @@ variable "security_group_ingress_rules" {
 
 variable "security_group_egress_rules" {
   description = "Egress rules for the security group"
-  type        = list(object({
+  type = list(object({
     from_port   = number
     to_port     = number
     protocol    = string
@@ -512,7 +512,7 @@ variable "security_group_egress_rules" {
     {
       from_port   = 0
       to_port     = 0
-      protocol    = "-1"  # -1 significa "todos los protocolos"
+      protocol    = "-1" # -1 significa "todos los protocolos"
       cidr_blocks = ["0.0.0.0/0"]
       description = "Allow all outbound traffic"
     }

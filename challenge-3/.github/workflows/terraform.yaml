@@ -1,0 +1,81 @@
+name:  Linting and Validation
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  setup-backend:
+    name: Backend review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Changing cd
+        run: cd setup-backend
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_wrapper: false
+      - name: Init
+        run: terraform init
+      - name: Validate
+        run: terraform validate -no-color > validation_backend.txt
+      - name: Format Terraform Code
+        run: terraform fmt -check
+        if: ${{ success() }} 
+      - name: setting up TFLint
+        uses: terraform-linters/setup-tflint@v1
+      - name: TFLint
+        run: tflint --format=json > tflint_backend.json
+      - name: tfsec
+        uses: aquasecurity/tfsec-action@master
+        with:
+          version: 'latest' 
+          working_directory: 'setup-backend'
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: backend-outputs
+          path: |
+            validation_backend.txt
+            tflint_backend.json
+            tfsec_backend.json
+
+  main-infra:
+    name: Main Infra Validation & Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: cd to main-infra folder
+        run: cd main-infra
+      - name: Setting up
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_wrapper: false
+      - name: Init
+        run: terraform init
+      - name: Validate
+        run: terraform validate -no-color > validation_main-infra.txt
+      - name: Format Code
+        run: terraform fmt -check
+        if: ${{ success() }} 
+      - name: Setting up TFLint
+        uses: terraform-linters/setup-tflint@v1
+      - name: TFLint
+        run: tflint --format=json > tflint_main-infra.json
+      - name: executing tfsec main-infra
+        uses: aquasecurity/tfsec-action@master
+        with:
+          version: 'latest'
+          working_directory: 'main-infra'
+      - name: Uploading Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: main-infra-outputs
+          path: |
+            validation_main-infra.txt
+            tflint_main-infra.json
+            tfsec_main-infra.json

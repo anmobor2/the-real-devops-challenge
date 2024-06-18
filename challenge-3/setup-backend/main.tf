@@ -62,8 +62,8 @@ resource "aws_iam_role_policy_attachment" "terraform_state_role_policy_attachmen
 }
 
 resource "aws_s3_bucket" "terraform_state_bucket" {
-  bucket         = "terraform-state-bucket-unique-id-toni"
-  force_destroy  = true
+  bucket        = "terraform-state-bucket-unique-id-toni"
+  force_destroy = true
   tags = {
     Name = "Terraform State Bucket"
   }
@@ -73,7 +73,7 @@ resource "aws_s3_bucket" "terraform_state_bucket" {
     aws_dynamodb_table.terraform_state_lock
   ]
 
-    lifecycle {
+  lifecycle {
     ignore_changes = [
       bucket,
     ]

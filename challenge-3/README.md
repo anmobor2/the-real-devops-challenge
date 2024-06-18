@@ -1,25 +1,6 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### You have to access the folder setup-backend and main-infra to see this information.
 
-No requirements.
+setup-backend is executed firts and second main-infra
 
-## Providers
-
-No providers.
-
-## Modules
-
-No modules.
-
-## Resources
-
-No resources.
-
-## Inputs
-
-No inputs.
-
-## Outputs
-
-No outputs.
 <!-- END_TF_DOCS -->

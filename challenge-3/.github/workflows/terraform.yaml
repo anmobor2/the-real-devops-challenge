@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Changing cd
-        run: cd setup-backend
+        run: cd setup-backend/test
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
@@ -50,7 +50,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: cd to main-infra folder
-        run: cd main-infra
+        run: cd /environments_main-infra/test"
       - name: Setting up
         uses: hashicorp/setup-terraform@v2
         with:

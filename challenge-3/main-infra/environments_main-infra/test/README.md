@@ -15,14 +15,14 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_alb"></a> [alb](#module_alb) | ./modules/alb | n/a |
-| <a name="module_alb_security_group"></a> [alb_security_group](#module_alb_security_group) | ./modules/alb_security_group | n/a |
-| <a name="module_autoscaling"></a> [autoscaling](#module_autoscaling) | ./modules/autoscaling | n/a |
-| <a name="module_launch_template"></a> [launch_template](#module_launch_template) | ./modules/launch_template | n/a |
-| <a name="module_rds"></a> [rds](#module_rds) | ./modules/rds | n/a |
-| <a name="module_target_group_http"></a> [target_group_http](#module_target_group_http) | ./modules/target_group | n/a |
-| <a name="module_target_group_https"></a> [target_group_https](#module_target_group_https) | ./modules/target_group | n/a |
-| <a name="module_vpc"></a> [vpc](#module_vpc) | ./modules/vpc | n/a |
+| <a name="module_alb"></a> [alb](#module_alb) | ../../modules/alb | n/a |
+| <a name="module_alb_security_group"></a> [alb_security_group](#module_alb_security_group) | ../../modules/alb_security_group | n/a |
+| <a name="module_autoscaling"></a> [autoscaling](#module_autoscaling) | ../../modules/autoscaling | n/a |
+| <a name="module_launch_template"></a> [launch_template](#module_launch_template) | ../../modules/launch_template | n/a |
+| <a name="module_rds"></a> [rds](#module_rds) | ../../modules/rds | n/a |
+| <a name="module_target_group_http"></a> [target_group_http](#module_target_group_http) | ../../modules/target_group | n/a |
+| <a name="module_target_group_https"></a> [target_group_https](#module_target_group_https) | ../../modules/target_group | n/a |
+| <a name="module_vpc"></a> [vpc](#module_vpc) | ../../modules/vpc | n/a |
 
 ## Resources
 

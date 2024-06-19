@@ -1,4 +1,5 @@
-There is fist to run the folder setup-backend and later main-infra.
+1 There is fist to run the folder setup-backend/test and 
+2 later main-infra/environments_main-infra/test.
 
 The first folder, setub-backen creates the bucket s3 and the dynamo table for the terraform state file.
 

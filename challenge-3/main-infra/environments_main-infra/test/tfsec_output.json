@@ -19,7 +19,7 @@
 			"status": 0,
 			"resource": "aws_security_group.rds_sg",
 			"location": {
-				"filename": "/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/main.tf",
+				"filename": "/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/environments_main-infra/test/main.tf",
 				"start_line": 179,
 				"end_line": 184
 			}
@@ -43,7 +43,7 @@
 			"status": 0,
 			"resource": "aws_security_group.rds_sg",
 			"location": {
-				"filename": "/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/main.tf",
+				"filename": "/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/environments_main-infra/test/main.tf",
 				"start_line": 172,
 				"end_line": 177
 			}
@@ -89,7 +89,7 @@
 			"status": 0,
 			"resource": "module.alb_security_group",
 			"location": {
-				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/.terraform/modules/alb_security_group.alb_security_group/main.tf",
+				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/environments_main-infra/test/.terraform/modules/alb_security_group.alb_security_group/main.tf",
 				"start_line": 449,
 				"end_line": 449
 			}
@@ -112,7 +112,7 @@
 			"status": 0,
 			"resource": "module.alb_security_group",
 			"location": {
-				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/.terraform/modules/alb_security_group.alb_security_group/main.tf",
+				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/environments_main-infra/test/.terraform/modules/alb_security_group.alb_security_group/main.tf",
 				"start_line": 448,
 				"end_line": 448
 			}
@@ -135,7 +135,7 @@
 			"status": 0,
 			"resource": "aws_security_group.rds_sg",
 			"location": {
-				"filename": "/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/main.tf",
+				"filename": "/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/environments_main-infra/test/main.tf",
 				"start_line": 183,
 				"end_line": 183
 			}
@@ -158,7 +158,7 @@
 			"status": 0,
 			"resource": "module.alb_security_group",
 			"location": {
-				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/.terraform/modules/alb_security_group.alb_security_group/main.tf",
+				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/environments_main-infra/test/.terraform/modules/alb_security_group.alb_security_group/main.tf",
 				"start_line": 72,
 				"end_line": 72
 			}
@@ -181,7 +181,7 @@
 			"status": 0,
 			"resource": "module.alb_security_group",
 			"location": {
-				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/.terraform/modules/alb_security_group.alb_security_group/main.tf",
+				"filename": "terraform-aws-modules/security-group/aws/Users/antoniomorenoborras/PycharmProjects/the-real-devops-challenge/challenge-3/main-infra/environments_main-infra/test/.terraform/modules/alb_security_group.alb_security_group/main.tf",
 				"start_line": 72,
 				"end_line": 72
 			}

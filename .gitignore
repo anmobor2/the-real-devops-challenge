@@ -177,3 +177,6 @@ pip-selfcheck.json
 
 # to ignore the .idea folder in PyCharm
 .idea/
+/challenge-3/main-infra/environments_main-infra/test/.terraform/
+terraform.tfstate
+terraform.tfstate.backup

@@ -180,3 +180,5 @@ pip-selfcheck.json
 /challenge-3/main-infra/environments_main-infra/test/.terraform/
 terraform.tfstate
 terraform.tfstate.backup
+challenge-3/main-infra/environments_main-infra/test/terraform.tfstate
+challenge-3/main-infra/environments_main-infra/test/terraform.tfstate.backup

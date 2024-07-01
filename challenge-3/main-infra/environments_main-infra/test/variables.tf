@@ -8,6 +8,12 @@ variable "vpc_name" {
 variable "vpc_azs" {
   description = "Availability Zones for the VPC"
   type        = list(string)
+  default     = ["eu-north-1a", "eu-north-1c"]
+}
+
+variable "rds_azs" {
+  description = "Availability Zones for the VPC"
+  type        = list(string)
   default     = ["eu-north-1a", "eu-north-1b", "eu-north-1c"]
 }
 
@@ -42,7 +48,6 @@ variable "vpc_tags" {
 variable "autoscaling_health_check_type" {
   description = "Type of health check to perform"
   type        = string
-  default     = "EC2"
 }
 
 variable "autoscaling_health_check_grace_period" {
@@ -81,6 +86,7 @@ variable "backend_port" {
 variable "target_type" {
   description = "Type of target for the ALB target group"
   type        = string
+  default     = "instances"
 }
 
 variable "alb_http_tcp_listeners" {
@@ -99,6 +105,12 @@ variable "alb_http_tcp_listeners" {
       protocol = "HTTPS"
     }
   ]
+}
+
+variable "protocol_http_version" {
+  description = "HTTP version for the ALB target group"
+  type        = string
+  default     = "HTTP1_1"
 }
 
 # albgroup variables
@@ -267,7 +279,7 @@ variable "launch_template_tags" {
 variable "launch_template_volume_size" {
   description = "The size of the root EBS volume (in GB)"
   type        = number
-  default     = 1
+  default     = 8
 }
 
 variable "vpc_cidr" {
@@ -517,4 +529,20 @@ variable "security_group_egress_rules" {
       description = "Allow all outbound traffic"
     }
   ]
+}
+
+
+
+#######New config######
+
+variable "create_terraform_state_policy" {
+  description = "Whether to create the Terraform state policy"
+  type        = bool
+  default     = true
+}
+
+variable "vpc_availability_zones" {
+  description = "Availability zone for the VPC"
+  type        = list(string)
+  default     = ["eu-north-1a", "eu-north-1b", "eu-north-1c"]
 }

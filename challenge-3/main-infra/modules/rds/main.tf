@@ -8,6 +8,7 @@ module "rds" {
 
   vpc_id                 = var.vpc_id
   subnets                = var.subnets
+  availability_zones     = ["eu-north-1a", "eu-north-1b", "eu-north-1c"]
 
   database_name          = var.database_name
   master_username        = var.master_username

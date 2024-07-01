@@ -47,6 +47,12 @@ alb_security_group_ingress_rules = [{
   protocol    = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
   description = "Allow HTTP traffic from anywhere"
+  }, {
+  from_port   = 22
+  to_port     = 22
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+  description = "Allow HTTPS traffic from anywhere"
 }]
 alb_security_group_egress_rules = [
   {
@@ -72,7 +78,7 @@ launch_template_tags = {
   Terraform   = "true"
   Environment = "project_intely"
 }
-launch_template_volume_size = 1
+launch_template_volume_size = 8
 
 # rds tfvars
 rds_tags = {
@@ -83,7 +89,8 @@ rds_tags = {
 name_rds = "project-intely-db"
 
 # autoscaling tfvars
-autoscaling_name                      = "my-asg"
+autoscaling_name = "my-asg"
+#autoscaling_health_check_type         = "ELB"
 autoscaling_health_check_type         = "EC2"
 autoscaling_health_check_grace_period = 300
 
@@ -91,20 +98,20 @@ autoscaling_instance_type = "t3.micro"
 autoscaling_ami           = "ami-0c0e147c706360bd7"
 
 autoscaling_min_size         = 1
-autoscaling_max_size         = 2
-autoscaling_desired_capacity = 1
+autoscaling_max_size         = 4
+autoscaling_desired_capacity = 3
 
 autoscaling_tags = {
   Terraform   = "true"
   Environment = "project_intely"
 }
 
-health_check_healthy_threshold   = 2
-health_check_interval            = 5
+health_check_healthy_threshold   = 5
+health_check_interval            = 30
 health_check_path                = "/"
-health_check_protocol            = "HTTP"
-health_check_timeout             = 3
-health_check_unhealthy_threshold = 10
+health_check_protocol            = "HTTP1"
+health_check_timeout             = 5
+health_check_unhealthy_threshold = 2
 listener_port                    = 80
 listener_protocol                = "HTTP"
 target_group_port                = 80

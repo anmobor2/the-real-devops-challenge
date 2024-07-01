@@ -61,3 +61,8 @@ variable "vpc_security_group_ids" {
   description = "The security group IDs to associate with the RDS cluster"
   type        = list(string)
 }
+
+variable "azs" {
+  description = "Availability Zones for the VPC"
+  type        = list(string)
+}

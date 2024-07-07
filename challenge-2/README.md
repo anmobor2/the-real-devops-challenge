@@ -1,16 +1,16 @@
 ## instructions
 I have used minikube for the kubernetes cluster. The following steps are to be followed to deploy the application on the cluster.
 minikube start
-minikube addons enable ingress
 
-kubectl apply -f python-http-server/namespace.yaml
+First:kubectl apply -f python-http-server/namespace.yaml
 
-helm install my-http-server ./python-http-server --namespace my-http-server
+Second: helm install my-http-server ./python-http-server --namespace my-http-server
 
 minikube tunnel
 
 minikube ip
 
+third:
 curl --resolve "python-http-server.<minikube-ip>.nip.io:80:127.0.0.1" -i http://python-http-server.<minikube-ip>.nip.io
 
 my case the minikube ip is
